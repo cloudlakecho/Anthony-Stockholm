@@ -6,8 +6,13 @@
 #
 # Comment:
 #
+# To do:
+#   Intrinsic dynamic
+#
+
 # Reference:
-#   https://www.nature.com/articles/srep09450
+#   Network instability: https://www.nature.com/articles/srep09450
+#   Prediction model: https://machinelearningmastery.com/make-predictions-scikit-learn/
 #
 
 import numpy as np
@@ -28,6 +33,15 @@ def F(X, C):
     # X(t) = {x_1(t), x_2(t), ...}: population of entities
     # f_i(x_i): instrinsic dyanmic
     # F(X) = {f_1(x_1), f_2(x_2)...}: intrinsic dyanamic for whole network
+
+    # To do
+    # Mean-Field Description
+    # Catastrophic Phase Transitions and Early Warnings in a Spatial Ecological Model
+    # Fern´andez and H Fort
+
+    # Coupled phase osillator
+    # Synchronization reveals topological scales in complex networks
+    # Alex Arenas, Albert D´ıaz-Guilera, and Conrad J. P´erez-Vicente
 
 # with other nodes—animal or human population
 # is a prime example. The combination of the evolving dynamics, the
