@@ -1,6 +1,10 @@
 # pca.py in Anthony-Stockholm
 # Cloud Cho Dec 10, 2018 - Perfomr Pricipal Component Analysis, PCA
 #
+# Input:
+#
+# Output:
+# 
 # Error:
 #   error exist
 #
@@ -21,8 +25,8 @@ from keras.models import Sequential
 from keras.layers import Activation, Dense, Flatten, Conv2D
 
 
-def pca():
-    X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+def pca(X):
+    # X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     pca = PCA(n_components=2)
     pca.fit(X)
     print(pca.explained_variance_ratio_)

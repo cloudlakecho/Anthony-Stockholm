@@ -2,6 +2,10 @@
 # main.py in Anthony-Stockholm
 # Cloud Cho May 26, 2018 - Perfomr Pricipal Component Analysis, PCA
 #
+# Input:
+# 
+# Output:
+# 
 # Error:
 #   error exist
 #
@@ -24,6 +28,11 @@ from tool import distortion, pca
 
 
 def main():
+    col = 2
+    row = 3
+    X = np.random.normal(0, 0.33, size=[row, col]).astype(np.float32)
+    
+    print(X)
     pca.pca(X)
     distortion.F(X, C)
 

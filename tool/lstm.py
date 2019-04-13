@@ -31,7 +31,9 @@ def data_manipulation(file_name):
 	print "Total Characters: ", n_chars
 	print "Total Vocab: ", n_vocab
 
-def make_dataset():
+	return n_char, n_vocab, raw_text
+
+def make_dataset(n_char, n_vocab, raw_text):
 	# prepare the dataset of input to output pairs encoded as integers
 	seq_length = 100
 	dataX = []
@@ -50,8 +52,9 @@ def make_dataset():
 	# one hot encode the output variable
 	y = np_utils.to_categorical(dataY)
 
+	return X, y
 
-def train_model():
+def train_model(X, y):
 	# define the LSTM model
 	model = Sequential()
 	model.add(LSTM(256, input_shape=(X.shape[1], X.shape[2])))

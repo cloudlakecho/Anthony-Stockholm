@@ -43,6 +43,13 @@ def F(X, C):
     # Synchronization reveals topological scales in complex networks
     # Alex Arenas, Albert D´ıaz-Guilera, and Conrad J. P´erez-Vicente
 
+    period = 32
+    z_size = 200
+    z = gen(period, z_size)
+    x_1 = np.random.randint(len(z), size=period)
+    X = [x_1]    
+    F = [f_1(x_1)]
+
 # with other nodes—animal or human population
 # is a prime example. The combination of the evolving dynamics, the
 # peer influence, and the random perturbation leads to a network of
