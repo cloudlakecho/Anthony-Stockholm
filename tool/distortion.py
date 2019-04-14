@@ -47,8 +47,12 @@ def F(X, C):
     z_size = 200
     z = gen(period, z_size)
     x_1 = np.random.randint(len(z), size=period)
-    X = [x_1]    
-    F = [f_1(x_1)]
+    X = [x_1]
+    print(X)
+    F = lambda X: X + np.random()
+    print(F)
+
+    return F
 
 # with other nodes—animal or human population
 # is a prime example. The combination of the evolving dynamics, the
