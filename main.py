@@ -3,9 +3,9 @@
 # Cloud Cho May 26, 2018 - Perfomr Pricipal Component Analysis, PCA
 #
 # Input:
-# 
+#
 # Output:
-# 
+#
 # Error:
 #   error exist
 #
@@ -31,7 +31,7 @@ def main():
     col = 2
     row = 3
     X = np.random.normal(0, 0.33, size=[row, col]).astype(np.float32)
-    
+    C = np.randint(0, 100)
     print(X)
     pca.pca(X)
     distortion.F(X, C)
