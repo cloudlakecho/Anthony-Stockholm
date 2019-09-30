@@ -35,14 +35,30 @@ def F(X, C):
     # F(X) = {f_1(x_1), f_2(x_2)...}: intrinsic dyanamic for whole network
 
     # To do
-    # Mean-Field Description
+    # (1) Mean-Field Description
     # Catastrophic Phase Transitions and Early Warnings in a Spatial Ecological Model
     # Fern´andez and H Fort
 
-    # Coupled phase osillator
+    # (2) Coupled phase osillator
     # Synchronization reveals topological scales in complex networks
     # Alex Arenas, Albert D´ıaz-Guilera, and Conrad J. P´erez-Vicente
 
+    # Idea
+    # x_i(t) could 1 by n array, which is n vector
+    # ex) 32 t^7 + 34 t^5 + 0.25 t^2 + 10 + 40 / t
+    # f_i(x_i) coud be 1 by m array as well like
+    # 32 x_i^7 + 34 x_i^5 + 0.25 x_i^2 + 10 + 40 / x_i
+    # The desgin could set what is dimension and then iteration find the
+    # best constant group.
+
+    t = np.ones((m, 1))  # m by 1
+    c_x = np.ones((n, m))
+    X = c_x * t  # n by 1
+
+    c_f = np.ones((k, n))
+    F = c_f * X  # k by 1 - Reveiw required
+
+    # -----
     period = 32
     z_size = 200
     z = gen(period, z_size)
