@@ -8,7 +8,7 @@
 #
 # To do:
 #   Intrinsic dynamic
-#
+#   gen function
 
 # Reference:
 #   Network instability: https://www.nature.com/articles/srep09450
@@ -22,6 +22,7 @@ from sklearn.decomposition import PCA
 import argparse
 import keras
 import os.path
+import pdb
 
 from pathlib2 import Path #  pipy library
 from inspect import currentframe, getframeinfo
@@ -29,7 +30,15 @@ from keras.models import Sequential
 from keras.layers import Activation, Dense, Flatten, Conv2D
 
 
+def gen(period, z_size):
+
+    return z
+
 def F(X, C):
+    n = 2
+    m = 3
+    k = 4
+
     # X(t) = {x_1(t), x_2(t), ...}: population of entities
     # f_i(x_i): instrinsic dyanmic
     # F(X) = {f_1(x_1), f_2(x_2)...}: intrinsic dyanamic for whole network
@@ -53,19 +62,25 @@ def F(X, C):
 
     t = np.ones((m, 1))  # m by 1
     c_x = np.ones((n, m))
-    X = c_x * t  # n by 1
+    X = np.dot(c_x, t)  # n by 1
 
     c_f = np.ones((k, n))
-    F = c_f * X  # k by 1 - Reveiw required
+    F = np.dot(c_f, X)  # k by 1 - Reveiw required
 
     # -----
     period = 32
     z_size = 200
+
+    # To do
     z = gen(period, z_size)
+
     x_1 = np.random.randint(len(z), size=period)
     X = [x_1]
     print(X)
     F = lambda X: X + np.random()
+
+    pdb.set_trace()
+
     print(F)
 
     return F
@@ -75,5 +90,8 @@ def F(X, C):
 # peer influence, and the random perturbation leads to a network of
 # stochastic differential equations: dX = (F(X,C) - LX)dt + sdW.
 def distort(X, C, W, sigma):
-    F(X, C) - LX
+    X = 0
+    C = 0
+    LX = 0
+    print(F(X, C) - LX)
     sigma
