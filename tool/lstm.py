@@ -28,10 +28,11 @@ def data_manipulation(file_name):
 	# summarize the loaded data
 	n_chars = len(raw_text)
 	n_vocab = len(chars)
-	print "Total Characters: ", n_chars
-	print "Total Vocab: ", n_vocab
+	print ("Total Characters: ", n_chars)
+	print ("Total Vocab: ", n_vocab)
 
-	return n_char, n_vocab, raw_text
+	return n_char, n_vocab, raw_text, chart_to_int
+
 
 def make_dataset(n_char, n_vocab, raw_text):
 	# prepare the dataset of input to output pairs encoded as integers
@@ -44,7 +45,7 @@ def make_dataset(n_char, n_vocab, raw_text):
 		dataX.append([char_to_int[char] for char in seq_in])
 		dataY.append(char_to_int[seq_out])
 	n_patterns = len(dataX)
-	print "Total Patterns: ", n_patterns
+	print ("Total Patterns: ", n_patterns)
 	# reshape X to be [samples, time steps, features]
 	X = numpy.reshape(dataX, (n_patterns, seq_length, 1))
 	# normalize
@@ -53,6 +54,7 @@ def make_dataset(n_char, n_vocab, raw_text):
 	y = np_utils.to_categorical(dataY)
 
 	return X, y
+
 
 def train_model(X, y):
 	# define the LSTM model
