@@ -48,9 +48,11 @@ def F(X, C):
     # Catastrophic Phase Transitions and Early Warnings in a Spatial Ecological Model
     # Fern´andez and H Fort
 
+
     # (2) Coupled phase osillator
     # Synchronization reveals topological scales in complex networks
     # Alex Arenas, Albert D´ıaz-Guilera, and Conrad J. P´erez-Vicente
+
 
     # Idea
     # x_i(t) could 1 by n array, which is n vector
@@ -60,11 +62,11 @@ def F(X, C):
     # The desgin could set what is dimension and then iteration find the
     # best constant group.
 
-    t = np.ones((m, 1))  # m by 1
-    c_x = np.ones((n, m))
-    X = np.dot(c_x, t)  # n by 1
+    t = np.ones((m, 1))  # m by 1 which means t^... ~ ... / t^...
+    c_x = np.ones((n, m))  # n group of constant of x_i(t)
+    X = np.dot(c_x, t)  # n by 1 This is X(t), {x_1(t), x_2(t), ...x_n(t)}
 
-    c_f = np.ones((k, n))
+    c_f = np.ones((k, n))  # k group of constant of f_i(x_i)
     F = np.dot(c_f, X)  # k by 1 - Reveiw required
 
     # -----
