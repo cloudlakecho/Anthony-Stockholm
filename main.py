@@ -34,6 +34,15 @@ from keras.utils import np_utils
 from tool import distortion, pca, lstm
 
 
+def main():
+    if (sys.argv[1] == '1'):
+        catastropy_predict()
+    elif (sys.argv[1] == '2'):
+        smaller_company_predict()
+    elif (sys.argv[1] == '3'):
+        investor_predict()
+
+
 def catastropy_predict():
     col = 2
     row = 3
@@ -60,13 +69,28 @@ def smaller_company_predict():
     lstm.train_model(X, y)
 
 
-def main():
-    if (sys.argv[1] == '1'):
-        catastropy_predict()
-    elif (sys.argv[1] == '2'):
-        smaller_company_predict()
+# To check investor prediction with specific stretegy and find unusual year
+#    Any firm or strategy perform differently in unsual year?   
+def investor_predict():    
+    investor_name = "Berkshire Hathaway"
+    no_year = 100
+    strageg_name = "Sell in May and go away"
+    selected_investor = Investor_Record(name=investor_name)
+    selected_stock = selected_investor.stock(percentage=no_year)
+    selected_strategy = Strategy(name=strategy_name)  
+    strategy_output = dict()                             
+    for idx, stock in enumerate(selected_stock):
+        #
+        # To do
+        # Go through many years depending on percentage
+        #
+        buy_cost = selectred_stragy.cost(item=stock)
+        sel_cost = selectred_stragy.cost(item=stock)
+        change = sel_cost - buy_cost
+        strtegy_output[stock] = change 
+        
 
-
+        
 
 
 if __name__ == '__main__':
